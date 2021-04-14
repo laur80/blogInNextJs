@@ -5,6 +5,7 @@
     var(--color-success-500),
     var(--color-success-100)
   );
+
   padding: var(--size-8) 0;
 }
 
