@@ -23,11 +23,9 @@ async function handler(req, res) {
     };
 
     let client;
-
+    const dbURI = process.env.MONGODB_URI;
     try {
-      client = await MongoClient.connect(
-        "mongodb+srv://lp80lp:internet0@lp.gnpxe.mongodb.net/nextBlog?retryWrites=true&w=majority"
-      );
+      client = await MongoClient.connect(dbURI);
     } catch (error) {
       res.status(500).json({ message: "Could not connect to database." });
       return;
